@@ -39,7 +39,7 @@ body {
 }
 
 /* background for the checkmarks  */
-#home-section .fas {
+#home-section .fas, #create-section .fas {
   color: #008ed6;
   background: #fff;
   padding: 5px;
@@ -52,3 +52,5 @@ body {
   padding: 5px;
   border-radius: 5px;
 }
+
+
