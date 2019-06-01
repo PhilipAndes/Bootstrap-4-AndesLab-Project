@@ -13,9 +13,11 @@
   <title>Bootstrap Theme</title>
 </head>
 
-<body>
+<!-- To give it a smooth scrolling we gonna need to add some stuff to the body and script at the bottom -->
+
+<body data-spy="scroll" data-target="#main-nav" id="home">
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
     <div class="container">
       <a href="index.html" class="navbar-brand">AndesLAB</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -48,7 +50,7 @@
           <!-- 8 column div, it will be none by default, but on a large screen it will display -->
           <div class="col-lg-8 d-none d-lg-block">
             <!-- Here we want the whole left side with the text etc -->
-            <h1 class="display-4">Build <strong>Social Profiles</strong>And Gain Revenue <strong>Profits</strong></h1>
+            <h1 class="display-4">Build <strong>Social Profiles</strong> And Gain Revenue <strong>Profits</strong></h1>
             <!-- d-flex will auto align horizontal -->
             <div class="d-flex">
               <!-- We want the checkmark to come first -->
@@ -316,6 +318,30 @@
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+
+    // Init Scrollspy
+    $('body').scrollspy({
+      target: '#main-nav'
+    });
+
+    // Add smooth scrolling
+    $('#main-nav a').on('click', function (e) {
+      // Check for a hash value
+      // So the #welcome, #about, #services
+      if (this.hash !== '') {
+        // Prevent default behavior
+        e.preventDefault();
+        // Store hash in var
+        const hash = this.hash;
+        // Animate smooth scroll
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          // Add hash to URL after the scroll
+          window.location.hash = hash;
+        });
+      }
+    });
   </script>
 </body>
 
