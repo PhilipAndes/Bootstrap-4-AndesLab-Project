@@ -7,3 +7,41 @@ body {
   border-bottom: #008ed6 3px solid;
   opacity: 0.8;
 }
+
+#home-section {
+  background: url(../img/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px;
+}
+
+/* Here we want to target the overlay */
+#home-section .dark-overlay {
+  /* absolute to target its parent, from top 0, left 0, width 100% and the height should be the same as above so 700px, so it covers the whole home section */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  /* For the actual overlay effect */
+  background: rgba(0,0,0,0.7);
+}
+
+/* We want the homesection to be centered */
+#home-section .home-inner {
+  padding-top: 150px;
+}
+
+/* Sign up form opacity */
+#home-section .card-form {
+  opacity: 0.8;
+}
+
+/* background for the checkmarks  */
+#home-section .fas {
+  color: #008ed6;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
